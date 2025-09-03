@@ -5,4 +5,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.edu.ifsp.demo_clean.model.Venda;
 
 
-public interface RepositoryVenda extends JpaRepository<Venda,Integer>{}
+public interface VendaRepository extends JpaRepository<Venda,Integer>{}

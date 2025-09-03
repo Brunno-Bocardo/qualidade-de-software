@@ -5,20 +5,20 @@ import org.springframework.stereotype.Service;
 import br.edu.ifsp.demo_clean.model.Carro;
 import br.edu.ifsp.demo_clean.model.Cliente;
 import br.edu.ifsp.demo_clean.model.Venda;
-import br.edu.ifsp.demo_clean.repository.RepositoryCarro;
-import br.edu.ifsp.demo_clean.repository.RepositoryCliente;
-import br.edu.ifsp.demo_clean.repository.RepositoryCarro;
+import br.edu.ifsp.demo_clean.repository.CarroRepository;
+import br.edu.ifsp.demo_clean.repository.ClienteRepository;
+import br.edu.ifsp.demo_clean.repository.CarroRepository;
 
 import java.util.*;
 
 @Service
 public class ServicoBaguncado {
 
-    private RepositoryCarro r;
-    private RepositoryCliente rc;
+    private CarroRepository r;
+    private ClienteRepository rc;
     private ReposVenda rv;
 
-    public ServicoBaguncado(RepositoryCarro x, RepositoryCliente y, ReposVenda z){
+    public ServicoBaguncado(CarroRepository x, ClienteRepository y, ReposVenda z){
         r=x; rc=y; rv=z;
     }
 
