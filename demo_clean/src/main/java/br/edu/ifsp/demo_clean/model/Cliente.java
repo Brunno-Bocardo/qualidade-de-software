@@ -7,16 +7,16 @@ import java.util.*;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int idd;
+    public int idCliente;
 
-    public String nm;
+    public String nome;
 
-    @OneToMany(mappedBy="cli")
+    @OneToMany(mappedBy="cliente")
     public List<Carro> carros = new ArrayList<>();
 
     public Cliente(){}
 
-    public Cliente(String n){
-        nm=n;
+    public Cliente(String nome){
+        this.nome=nome;
     }
 }

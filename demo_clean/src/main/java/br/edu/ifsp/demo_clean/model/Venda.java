@@ -7,10 +7,10 @@ import java.time.LocalDate;
 public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int codVenda;
+    public int idVenda;
 
     @ManyToOne
-    public Cliente comprador;
+    public Cliente cliente;
 
     @ManyToOne
     public Carro carro;
@@ -19,7 +19,7 @@ public class Venda {
 
     public Venda(){}
 
-    public Venda(Cliente c, Carro ca){
-        comprador=c; carro=ca; data=LocalDate.now();
+    public Venda(Cliente cliente, Carro carro){
+        this.cliente=cliente; this.carro=carro; this.data=LocalDate.now();
     }
 }
