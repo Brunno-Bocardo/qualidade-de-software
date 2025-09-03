@@ -4,4 +4,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.edu.ifsp.demo_clean.model.Carro;
 
-public interface Repos extends JpaRepository<Carro,Integer>{}
+public interface RepositoryCarro extends JpaRepository<Carro,Integer>{}
