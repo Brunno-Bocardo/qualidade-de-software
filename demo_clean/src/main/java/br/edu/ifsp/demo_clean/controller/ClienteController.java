@@ -1,11 +1,9 @@
 package br.edu.ifsp.demo_clean.controller;
 
 import org.springframework.web.bind.annotation.*;
-
-import br.edu.ifsp.demo_clean.model.Carro;
-import br.edu.ifsp.demo_clean.service.ServicoBaguncado;
+import br.edu.ifsp.demo_clean.model.Cliente;
+import br.edu.ifsp.demo_clean.service.ClienteService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-
 import java.util.*;
 
 @RestController
@@ -14,12 +12,21 @@ import java.util.*;
 
 public class ClienteController {
 	
-	private ServicoBaguncado s;
+	private ClienteService clienteService;
+	
+	public ClienteController(ClienteService clienteService){
+    	this.clienteService = clienteService;
+    }
 
-	@PostMapping("/carro")
-    public String salvaCarro(@RequestBody Carro c){s.addCar(c);return "ok carro";}
+	@PostMapping("/cliente")
+    public String salvaCliente(@RequestBody Cliente cliente){
+		clienteService.addCliente(cliente);
+		return "ok carro";
+	}
 
-    @GetMapping("/carro")
-    public List<Carro> todosCar(){return s.tudoCarro();}
+    @GetMapping("/cliente")
+    public List<Cliente> listarClientes(){
+    	return clienteService.listarClientes();
+    }
 	
 }
